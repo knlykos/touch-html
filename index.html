@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div
+      id="quadro"
+      style="background: red; height: 100%; width: 300px; position: absolute; left: 0; top: 0; pointer-events: all; user-select: none;"
+    ></div>
+
+    <!-- <script>
+      var myElement = document.getElementById('quadro');
+      var hammertime = new Hammer(myElement);
+      var isDragging = false;
+      var lastPosX = 0;
+      var lastPosY = 0;
+
+      hammertime.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+
+      hammertime.on('panleft panright', function(ev) {
+        console.log('lastPosX', lastPosX);
+        var elem = ev.target;
+        if (!isDragging) {
+          isDragging = true;
+          lastPosX = elem.offsetLeft;
+        }
+        var posX = ev.deltaX + lastPosX;
+        // deltaY = ev.deltaY;
+        if (posX > -297 && posX < 0) {
+          elem.style.left = posX + 'px';
+        }
+
+        console.log(ev.target.offsetLeft);
+        if (posX > -297) {
+          elem.style.background = 'red';
+        }
+        if (ev.isFinal) {
+          isDragging = false;
+          if (ev.type === 'panleft') {
+            ocultarSidebar(posX, elem);
+          } else {
+            mostrarSidebar(posX, elem);
+          }
+        }
+        // elem.style.top = deltaY + 'px';
+      });
+
+      function ocultarSidebar(leftPosition, element) {
+        console.log('panleft');
+
+        element.style.left = -297 + 'px';
+        element.style.background = 'transparent';
+      }
+
+      function mostrarSidebar(leftPosition, element) {
+        console.log('panright');
+
+        element.style.left = 0 + 'px';
+        console.log(leftPosition > -295);
+        if (leftPosition > -295) {
+          element.style.background = 'red';
+        }
+      }
+    </script> -->
+    <script src="./index.js"></script>
+  </body>
+</html>
